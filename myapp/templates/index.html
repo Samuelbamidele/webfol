@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="keywords" content="website development, embedded systems, electronics, solar installation, electrical installation">
+    <meta name="description" content="Learn more about Bamidele Samuel, a passionate professional with expertise in website development, electronics, and technology solutions.">
+    <meta name="author" content="Bamidele Samuel">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body><!---
+    <header>
+        <nav>
+            <div class="logo">Portfo<span>lio.</span></div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header> -->
+    <header class="header">
+        <div class="logo">Sam<span>Tech.</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Hello, my name is <br> <span>Bamidele Samuel</span></h1>
+            <p>And I'm a <span id="dynamic-text"></span><span class="cursor">|</span></p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'image/bng.png' %}" alt="Your Photo">
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <div class="container">
+            <div class="image">
+                {% if about_me.profile_image %}
+                <img src="{{ about_me.profile_image.url }}" alt="samuelbamidele">
+                {% else %}
+                  <img src="{% static 'image/about.png' %}" alt="samuelbamidele">
+                {% endif %}
+
+ 
+            </div>
+            <div class="content">
+                <h2>About Me</h2>
+                <p>{{ about_me.bio }}</p>
+                {% if about_me.cv_link %}
+                    <a href="{{ about_me.cv_link.url }}" class="btn" download>Download CV</a>
+                {% else %}
+                    <p>CV not uploaded yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!--
+    <section class="services" id="services">
+        <div class="container">
+            <h2>My Services</h2>
+            <p class="subheading">What I provide</p>
+            <div class="services-list">
+                <div class="service">
+                    <i class="icon">💻</i>
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia ut illo enim.</p>
+                </div>
+                <div class="service">
+                    <i class="icon">📢</i>
+                    <h3>Advertising</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia ut illo enim.</p>
+                </div>
+                <div class="service">
+                    <i class="icon">📱</i>
+                    <h3>Apps Design</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia ut illo enim.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>My Services</h2>
+            <p class="subheading">What I provide</p>
+            <div class="services-list">
+                <div class="service">
+                    <i class="icon">💻</i>
+                    <h3>Web Development</h3>
+                    <p>I create responsive, user-friendly websites tailored to meet client requirements using the latest technologies.</p>
+                </div>
+                <div class="service">
+                    <i class="icon">🤖</i>
+                    <h3>Embedded Systems</h3>
+                    <p>Designing and developing embedded systems solutions for various applications, ensuring efficiency and reliability.</p>
+                </div>
+                <div class="service">
+                    <i class="icon">🔧</i>
+                    <h3>Installation</h3>
+                    <p>Expert in the installation of solar panels and inverter, electrical wiring, and other technical setups for residential and industrial use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>My Portfolio</h2>
+            <p class="subheading">Some of my recent works</p>
+            <div class="portfolio-list">
+                {% for item in portfolio %}
+                <div class="portfolio-item">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                    <div class="overlay">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                        <a href="{{ item.project_link }}">View Project</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>My Blogs</h2>
+            <p class="subheading">Explore my latest posts</p>
+            <div class="blog-container">
+                {% for blog in blogs %}
+                <div class="blog-card">
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                    <div class="blog-content">
+                        <h3>{{ blog.title }}</h3>
+                        <p>{{ blog.content|truncatewords:20 }}</p>
+                        <a href="{{ blog.link }}" class="read-more">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <a href="#" class="back-to-home">
+            <span>&#8593;</span> <!-- This is an upward-facing arrow -->
+        </a>
+    </section>
+ 
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p class="subheading">Get in touch</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Feel free to reach out to me for any inquiries, collaborations, or opportunities. I'm available to discuss your projects, answer your questions, and help bring your ideas to life.</p>
+                    <ul>
+                        <li><strong>Name:</strong> Bamidele Samuel</li>
+                        <li><strong>Address:</strong> Osun, Nigeria</li>
+                        <li><strong>Email:</strong> samuelbamidele301@gmail.com</li>
+                        <li><strong>Phone:</strong> +2347063556355</li>
+                    </ul>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="social-media">
+            <a href="https://wa.me/2348134523227" target="_blank" class="social-icon">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+            </a>
+            <a href="https://web.facebook.com/SAMTECH.hub.01/" target="_blank" class="social-icon">
+                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" class="social-icon">
+                <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/bamidele953/" target="_blank" class="social-icon">
+                <img src="https://img.icons8.com/color/48/000000/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    </section>
+    <!-- Footer -->
+    <footer id="site-footer">
+        <p>&copy; <span id="currentYear"></span> Bamidele Samuel. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // Get the current year
+        const year = new Date().getFullYear();
+    
+        // Set the year in the footer
+        document.getElementById('currentYear').textContent = year;
+    </script>
+    
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
