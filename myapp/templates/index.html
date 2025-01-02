@@ -48,27 +48,19 @@
         <div class="image">
             <img src="{% static 'image/bng.png' %}" alt="Your Photo">
         </div>
-        <section class="about" id="about">
-            <div class="container">
-                <div class="image">
-                    {% if about_me.profile_image %}
-                        <img src="{{ about_me.profile_image.url }}" alt="samuelbamidele">
-                    {% else %}
-                        <img src="/static/about.jpg" alt="samuelbamidele">
-                    {% endif %}
-                </div>
-                <div class="content">
-                    <h2>About Me</h2>
-                    <p>{{ about_me.bio }}</p>
-                    {% if about_me.cv_link %}
-                        <a href="{{ about_me.cv_link.url }}" class="btn" download>Download CV</a>
-                    {% else %}
-                        <p>No CV available</p>
-                    {% endif %}
-                </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="image">
+                <img src="{{ about_me.profile_image.url }}" alt="samuelbamidele">
             </div>
-        </section>
-        
+            <div class="content">
+                <h2>About Me</h2>
+                <p>{{ about_me.bio }}</p>
+                <a href="{{ about_me.cv_link.url }}" class="btn" download>Download CV</a>
+            </div>
+        </div>
+    </section>
     
     <!--
     <section class="services" id="services">
