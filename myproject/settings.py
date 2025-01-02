@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'f9fa77c74b2d96cf313c28215c011d55')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', default='False') == 'True'  # Set to False for production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['webfol.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
