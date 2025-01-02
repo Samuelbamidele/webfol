@@ -25,7 +25,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'f9fa77c74b2d96cf313c28215c011d55')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', default='False') == 'True'  # Set to False for production
 
-ALLOWED_HOSTS = ['webfol.onrender.com']
+ALLOWED_HOSTS = ['webfol.onrender.com', '127.0.0.1', 'localhost']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -112,8 +113,10 @@ STATIC_URL = '/static/'  # URL to serve static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp/static')]  # App-level static files folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Collected static files folder
 
-MEDIA_URL = '/media/'  # URL to serve media files
-MEDIA_ROOT = BASE_DIR / 'media'  # Folder to store media files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -3,7 +3,7 @@ from django.db import models
 class AboutMe(models.Model):
     profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
     bio = models.TextField()
-    cv_link = models.FileField(upload_to='resumes/')
+    cv_link = models.FileField(upload_to='resumes/', blank=True, null=True)
 
 class Portfolio(models.Model):
     title = models.CharField(max_length=100)

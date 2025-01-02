@@ -53,23 +53,15 @@
     <section class="about" id="about">
         <div class="container">
             <div class="image">
-                {% if about_me.profile_image %}
+               
                 <img src="{{ about_me.profile_image.url }}" alt="samuelbamidele">
-                {% else %}
-                  <img src="{% static 'image/about.png' %}" alt="samuelbamidele">
-                {% endif %}
-
- 
             </div>
             <div class="content">
                 <h2>About Me</h2>
                 <p>{{ about_me.bio }}</p>
-                {% if about_me.cv_link %}
+            
                     <a href="{{ about_me.cv_link.url }}" class="btn" download>Download CV</a>
-                {% else %}
-                    <p>CV not uploaded yet.</p>
-                {% endif %}
-            </div>
+             
         </div>
     </section>
     <!--

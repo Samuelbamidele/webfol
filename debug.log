@@ -1402,3 +1402,7 @@ Traceback (most recent call last):
     raise ImproperlyConfigured("The SECRET_KEY setting must not be empty.")
 django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
 "GET /favicon.ico HTTP/1.1" 500 145
+CREATE TABLE "new__myapp_aboutme" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "bio" text NOT NULL, "profile_image" varchar(100) NULL, "cv_link" varchar(100) NULL); (params None)
+INSERT INTO "new__myapp_aboutme" ("id", "bio", "profile_image", "cv_link") SELECT "id", "bio", "profile_image", "cv_link" FROM "myapp_aboutme"; (params ())
+DROP TABLE "myapp_aboutme"; (params ())
+ALTER TABLE "new__myapp_aboutme" RENAME TO "myapp_aboutme"; (params ())
