@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import AboutMe, Portfolio, Blog
 
 def index(request):
-    about_me = AboutMe.objects.all()
+    about_me = AboutMe.objects.first()
     portfolio = Portfolio.objects.all()
     blogs = Blog.objects.all()
     return render(request, 'index.html', {
