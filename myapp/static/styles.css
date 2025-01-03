@@ -1,9 +1,18 @@
 /* General reset */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px; /* Or whatever width you want */
+    margin: 0 auto; /* Centers the container */
+    padding: 15px; /* Optional, for some breathing space */
+}
+
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
 }
 
 /* Header styles */
@@ -69,11 +78,11 @@ nav ul li a:hover {
     padding: 50px 20px;
     background: #000;
     color: #fff;
-    min-height: 100vh;
+    min-height: 80vh; /* Reduced from 100vh */
 }
 
 .content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Adjusted for readability */
 }
 
 .content span {
@@ -109,7 +118,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px; /* Reduced gap from 30px */
 }
 
 .about .image img {
@@ -199,7 +208,7 @@ nav ul li a:hover {
     background-color: #222;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 0; /* Reduced padding */
 }
 
 /* Media Queries for Responsiveness */
@@ -219,7 +228,7 @@ nav ul li a:hover {
     }
 
     .content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem; /* Adjusted for smaller screens */
     }
 
     .content p {
@@ -241,12 +250,12 @@ nav ul li a:hover {
         font-size: 18px;
     }
 
-    .content h1 {
+    .content h2 {
         font-size: 1.5rem;
     }
 
     .content p {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Adjusted for readability */
     }
 
     .btn {
