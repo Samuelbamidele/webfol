@@ -2325,3 +2325,5 @@ Not Found: /media/blogs/FB_IMG_1735375412322_2-removebg-preview.png
 "GET /static/script.js HTTP/1.1" 304 0
 File C:\Users\USER\Desktop\PORTPROJECT\myproject\myapp\templates\index.html previous mtime: 1735896392.8090644, current mtime: 1735896594.8813684
 C:\Users\USER\Desktop\PORTPROJECT\myproject\myapp\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x000001AB888296C0>, True), (<function translation_file_changed at 0x000001AB8979C720>, None)].
+CREATE TABLE "myapp_about" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "content" text NOT NULL, "image" varchar(100) NULL, "cv" varchar(100) NULL); (params None)
+DROP TABLE "myapp_aboutme"; (params ())

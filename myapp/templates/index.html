@@ -52,20 +52,17 @@
     <section class="about" id="about">
         <div class="container">
             <div class="image">
-                {% if about_me.profile_image %}
-                    <img src="{{ about_me.profile_image.url }}" alt="samuelbamidele">
-                {% else %}
-                <img src="{% static 'image/about.png' %}" alt="Your Photo">
+                {% if about_content.image %}
+                <img src="{{ about_content.image.url }}" alt="About Me">
                 {% endif %}
             </div>
             <div class="content">
                 <h2>About Me</h2>
-                <p>{{ about_me.bio }}</p>
-                {% if about_me.cv_link %}
-                    <a href="{{ about_me.cv_link.url }}" class="btn" download>Download CV</a>
-                {% else %}
-                    <p>No CV available</p>
+                <p>{{ about_content.content }}</p>
+                {% if about_content.cv %}
+                    <a class="download-cv" href="{{ about_content.cv.url }}" download>Download CV</a>
                 {% endif %}
+               
             </div>
         </div>
     </section>
@@ -170,7 +167,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p>Feel free to reach out to me for any inquiries, collaborations, or opportunities. I'm available to discuss your projects, answer your questions, and help bring your ideas to life.</p>
+                    <p>Feel free to reach out to me for any inquiries or collaborations.</p>
                     <ul>
                         <li><strong>Name:</strong> Bamidele Samuel</li>
                         <li><strong>Address:</strong> Osun, Nigeria</li>

@@ -1,9 +1,11 @@
 from django.db import models
+class About(models.Model):
+    content = models.TextField(help_text="Details about yourself")
+    image = models.ImageField(upload_to='about/', null=True, blank=True, help_text="Upload an image of yourself")
+    cv = models.FileField(upload_to='cv/', null=True, blank=True, help_text="Upload your CV")
 
-class AboutMe(models.Model):
-    profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
-    bio = models.TextField()
-    cv_link = models.FileField(upload_to='resumes/', blank=True, null=True)
+    def __str__(self):
+        return "About Me"
 
 class Portfolio(models.Model):
     title = models.CharField(max_length=100)

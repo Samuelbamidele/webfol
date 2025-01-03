@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import AboutMe, Portfolio, Blog
+from .models import About, Portfolio, Blog
 
 def index(request):
-    about_me = AboutMe.objects.first()
+    about_content = About.objects.first()
     portfolio = Portfolio.objects.all()
     blogs = Blog.objects.all()
     return render(request, 'index.html', {
-        'about_me': about_me,
+        'about_content': about_content,
         'portfolio': portfolio,
         'blogs': blogs
     })

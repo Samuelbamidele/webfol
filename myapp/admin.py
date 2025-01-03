@@ -1,6 +1,9 @@
 from django.contrib import admin
-from .models import AboutMe, Portfolio, Blog
+from .models import About, Portfolio, Blog
 
-admin.site.register(AboutMe)
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('id', 'content')
+    
 admin.site.register(Portfolio)
 admin.site.register(Blog)
